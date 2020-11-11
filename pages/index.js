@@ -85,13 +85,13 @@ function Index() {
                 <div className="row">
                     <div className="col-lg-8">
                         <div className="covid-bar-chart-card">
-                            <h5>🦠 การเพิ่มขึ้นของไวรัสทั่วโลก</h5>
+                            <h5>🦠 Contagi a livello GLOBALE</h5>
                             <BarChart data={barChart} />
                         </div>
                     </div>
                     <div className="col-lg-4">
                         <div className="covid-donut-chart-card">
-                            <h5>อัตราส่วน</h5>
+                            <h5>rapporto</h5>
                             <DonutChart data={donutChart} />
                         </div>
                     </div>
@@ -109,7 +109,7 @@ function Index() {
                     <div className="col-lg-4">
                         <Card
                             type="confirmed"
-                            title="จำนวนผู้ติดเชื้อ"
+                            title="Confermati"
                             number={confirmed?.value}
                             lastUpdate={lastUpdate}
                         />
@@ -117,7 +117,7 @@ function Index() {
                     <div className="col-lg-4">
                         <Card
                             type="recovered"
-                            title="จำนวนผู้รับรักษา"
+                            title="Ricoverati"
                             number={recovered?.value}
                             lastUpdate={lastUpdate}
                         />
@@ -125,7 +125,7 @@ function Index() {
                     <div className="col-lg-4">
                         <Card
                             type="deaths"
-                            title="จำนวนผู้เสียชีวิต"
+                            title="Morti"
                             number={deaths?.value}
                             lastUpdate={lastUpdate}
                         />
@@ -149,7 +149,7 @@ function Index() {
         <Layout>
             <div className="top-section">
                 <img className="logo" src="images/logo.png" width="230" />
-                <p>ติดตามสถานะการณ์ผู้เชื้อไวรัส Covid-19 ในประเทศไทยและทั่วโลก</p>
+                <p>xx</p>
             </div>
             {renderFilterTypeBtn()}
             {renderCardSection()}
