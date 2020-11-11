@@ -36,7 +36,7 @@ export function getDonutConfig(categories) {
         legend: {
             position: "right",
             fontSize: '16px',
-            fontFamily: 'Athiti',
+            fontFamily: 'Arial',
             offsetX: -10,
             labels: {
                 colors: '#b1afee',

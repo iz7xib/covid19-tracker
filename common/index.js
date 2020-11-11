@@ -1,9 +1,9 @@
 import _ from "lodash";
 
-export const FILTER_TYPE = { THAILAND: "TH", GLOBAL: "GL" };
+export const FILTER_TYPE = { ITALIA: "IT", GLOBAL: "GL" };
 
 export function transformDonutData(data) {
-    const categories = ["ผู้ติดเชื้อ", "ผู้รับการรักษา", "ผู้เสียชีวิต"];
+    const categories = ["Contagi", "Ricoverati", "Morti"];
     const series = Object.values(data)
         .reduce((prev, val) => prev.concat(val.value), [])
         .slice(0, 3);
@@ -36,7 +36,7 @@ export function transformBarData(data) {
             categories: []
         });
 
-    const series = [{ name: 'ผู้ติดเชื้อ', data: transformedData.totalConfirmed }];
+    const series = [{ name: 'Persona infetta', data: transformedData.totalConfirmed }];
     const { categories } = transformedData;
 
     return {

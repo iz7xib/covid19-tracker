@@ -29,7 +29,7 @@ function Card({ type, title, number = 0, lastUpdate }) {
                     <div className="d-flex flex-column">
                         <div className="covid-type-title">{title}</div>
                         <div className="covid-type-number">{numeral(number).format('0,0')}</div>
-                        <div className="covid-type-updated">อัพเดตล่าสุด {moment(lastUpdate).format('DD-MM-YYYY HH:MM')}</div>
+                        <div className="covid-type-updated">Ultimo aggiornamento:{moment(lastUpdate).format('DD-MM-YYYY HH:MM')}</div>
                     </div>
                 </div>
             </div>

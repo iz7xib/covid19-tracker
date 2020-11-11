@@ -9,7 +9,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: url("/images/background.png") #05020c !important;
+  // background: url("/images/background.png") #05020c !important;
   background-size: contain;
   background-position: right top;
   color: $text-color;
@@ -88,7 +88,7 @@ body {
       color: #fff;
       .covid-type-number {
         &::after {
-          color: #fff;
+          color:black;
         }
       }
     }
@@ -96,16 +96,16 @@ body {
     .covid-type-number {
       font-size: 40px;
       font-weight: 600;
-      color: #fff;
+      color: black;
       font-family: "Poppins";
-      &::after {
-        content: " คน";
-        font-size: 24px;
-        color: $text-color;
-        font-weight: normal;
-        font-family: "Athiti";
-        opacity: 0.7;
-      }
+      // &::after {
+      //   content: " ml";
+      //   font-size: 24px;
+      //   color: $text-color;
+      //   font-weight: normal;
+      //   font-family: "Athiti";
+      //   opacity: 0.7;
+      // }
     }
 
     .covid-type-updated {
@@ -132,7 +132,7 @@ body {
 .covid-bar-chart-card {
   h5 {
     &::after {
-      content: "(7 วันย้อนหลัง)";
+      content: "(Ultimi 7 giorni)";
       font-size: 15px;
       opacity: 0.6;
       padding-left: 6px;

@@ -26,15 +26,15 @@ function Index() {
     const [loading, setLoading] = useState(false);
     const [filterType, setFilterType] = useState(FILTER_TYPE.GLOBAL);
     const [filteredData, setFilteredData] = useState({});
-    const [covid, setCovid] = useState({ thailand: {}, global: {} });
+    const [covid, setCovid] = useState({ italia: {}, global: {} });
     const [barChart, setBarchart] = useState({});
     const [donutChart, setDonutchart] = useState({});
 
     const fetchData = async () => {
         setLoading(true);
 
-        const [covidThai, covidGlobal, covidDaily] = await Promise.all([
-            API.covidThai(),
+        const [covidIta, covidGlobal, covidDaily] = await Promise.all([
+            API.covidIta(),
             API.covidGlobal(),
             API.covidDaily()
         ]);
@@ -42,7 +42,7 @@ function Index() {
         setBarchart(transformBarData(covidDaily.data));
 
         setCovid({
-            thailand: covidThai.data,
+            italia: covidIta.data,
             global: covidGlobal.data,
         });
 
@@ -54,11 +54,11 @@ function Index() {
     }, [])
 
     useEffect(() => {
-        const { thailand, global } = covid;
+        const { italia, global } = covid;
         let data = {};
         switch (filterType) {
-            case FILTER_TYPE.THAILAND:
-                data = thailand;
+            case FILTER_TYPE.ITALIA:
+                data = italia;
                 break;
             case FILTER_TYPE.GLOBAL:
                 data = global;
@@ -85,13 +85,13 @@ function Index() {
                 <div className="row">
                     <div className="col-lg-8">
                         <div className="covid-bar-chart-card">
-                            <h5>🦠 Contagi a livello GLOBALE</h5>
+                            <h5>Andamento globale</h5>
                             <BarChart data={barChart} />
                         </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-4 ">
                         <div className="covid-donut-chart-card">
-                            <h5>rapporto</h5>
+                            <h5>Rapporto</h5>
                             <DonutChart data={donutChart} />
                         </div>
                     </div>
@@ -106,7 +106,7 @@ function Index() {
         return (
             <div className="covid-stats-section">
                 <div className="row">
-                    <div className="col-lg-4">
+                    <div className="col-lg-4 ">
                         <Card
                             type="confirmed"
                             title="Confermati"
@@ -114,7 +114,7 @@ function Index() {
                             lastUpdate={lastUpdate}
                         />
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-4 ">
                         <Card
                             type="recovered"
                             title="Ricoverati"
@@ -122,7 +122,7 @@ function Index() {
                             lastUpdate={lastUpdate}
                         />
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-4 ">
                         <Card
                             type="deaths"
                             title="Morti"
@@ -148,8 +148,9 @@ function Index() {
     return (
         <Layout>
             <div className="top-section">
-                <img className="logo" src="images/logo.png" width="230" />
-                <p>xx</p>
+                {/* <img className="logo" src="images/logo.png" width="230" /> */}
+                <p>Covid-19
+                </p>
             </div>
             {renderFilterTypeBtn()}
             {renderCardSection()}

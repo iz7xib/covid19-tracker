@@ -9,7 +9,7 @@ function FilterTypeButton({ filterType, setFilterType }) {
         switch (filterType) {
             case FILTER_TYPE.GLOBAL:
                 return setIsGlobal(true);
-            case FILTER_TYPE.THAILAND:
+            case FILTER_TYPE.ITALIA:
                 return setIsGlobal(false);
         }
     }, [filterType]);
@@ -31,14 +31,19 @@ function FilterTypeButton({ filterType, setFilterType }) {
         <div>
             <Button
                 onClick={() => setFilterType(FILTER_TYPE.GLOBAL)}
-                text="🌎 ทั่วโลก"
+                text="Mondo"
                 isActive={isGlobal}
             />
             <Button
-                onClick={() => setFilterType(FILTER_TYPE.THAILAND)}
-                text="🇹🇭 ประเทศไทย"
+                onClick={() => setFilterType(FILTER_TYPE.ITALIA)}
+                text="Italia"
                 isActive={!isGlobal}
             />
+            {/* <Button
+                onClick={() => setFilterType(FILTER_TYPE.DAILY)}
+                text="Giornalieri"
+                isActive={!isGlobal}
+            /> */}
         </div>
     )
 }

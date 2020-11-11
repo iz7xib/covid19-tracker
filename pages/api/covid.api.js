@@ -5,7 +5,7 @@ export const covidGlobal = async () => {
         .then(response => response).catch(error => error);
 }
 
-export const covidThai = async () => {
+export const covidIta = async () => {
     return await axios.get("https://covid19.mathdro.id/api/countries/IT")
         .then(response => response).catch(error => error);
 }

@@ -16,9 +16,9 @@ function Layout({ children }) {
             <div className="container-fluid">
                 {children}
             </div>
-            <div className="credit">
+            {/* <div className="credit">
                 🌈 Design by <a target="_blank" href="https://github.com/mrtompkin18">mrtompkin18</a> 😍 Api By <a target="_blank" href="https://github.com/mathdroid/covid-19-api">Mathdroid</a>
-            </div>
+            </div> */}
         </div>
     )
 }
